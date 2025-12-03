@@ -1,0 +1,199 @@
+/* --- Global Styles --- */
+:root {
+    --primary-color: #007bff; /* Bootstrap Blue */
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-bg: #f8f9fa;
+    --dark-text: #343a40;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-text);
+    padding-top: 56px; /* For fixed navbar */
+}
+
+/* --- Header and Navigation --- */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--primary-color) !important;
+}
+
+/* --- Main Layout --- */
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+/* --- Analysis Form Styling --- */
+#analysisForm {
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+    font-family: Consolas, monospace;
+    font-size: 0.9rem;
+}
+
+/* --- Buttons and Loading --- */
+#analyze-btn {
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+#loadingIndicator {
+    display: none;
+    margin-left: 15px;
+    color: var(--primary-color);
+}
+
+/* --- Alerts and Messages --- */
+.message {
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-weight: 600;
+    display: block;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: var(--success-color);
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: var(--error-color);
+    border: 1px solid #f5c6cb;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #117a8b;
+    border: 1px solid #bee5eb;
+}
+
+/* --- Analysis Results Section --- */
+#analysisResults {
+    display: none; /* Initially hidden, shown by JS */
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    border-left: 5px solid var(--primary-color);
+}
+
+#analysisResults h3 {
+    color: var(--dark-text);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#resultsMetrics {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 20px;
+}
+
+.metric-box {
+    text-align: center;
+    padding: 10px;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#matchScore .score {
+    color: var(--success-color);
+}
+
+#atsScore .score {
+    color: var(--primary-color);
+}
+
+/* --- Suggestions and Improvement Points --- */
+#suggestionsText ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#suggestionsText li {
+    background: var(--light-bg);
+    padding: 10px;
+    border-left: 3px solid var(--warning-color);
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+}
+
+/* --- Analysis History List --- */
+#analysisHistoryList {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    padding: 0;
+}
+
+.list-group-item {
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s ease, border-left 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: var(--light-bg);
+    border-left: 5px solid var(--secondary-color);
+}
+
+.list-group-item strong {
+    font-weight: 600;
+}
+
+.badge {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    #resultsMetrics {
+        flex-direction: column;
+    }
+    .metric-box {
+        margin-bottom: 10px;
+    }
+    .list-group-item {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+    .list-group-item > div:last-child {
+        margin-top: 10px;
+    }
+}

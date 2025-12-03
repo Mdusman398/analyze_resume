@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Match Analyzer</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="dashboard-header">
+        <h1>CV Match Pro</h1>
+        <nav>
+          <button id="logout-btn" class="btn btn-danger">Log Out</button>
+        </nav>
+      </header>
+
+      <p class="top-text">
+        Enter your CV/Resume text and the Job Description (JD) to get your match
+        score and improvement suggestions from Gemini AI.
+      </p>
+
+      <div id="message" class="message"></div>
+
+      <hr />
+
+      <section class="analysis-input">
+        <form id="analysisForm">
+          <div class="form-group">
+            <label for="jobTitle">Job Title (for saving history):</label>
+            <input
+              type="text"
+              id="jobTitle"
+              placeholder="e.g., Senior MERN Stack Developer"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="jobDescription">Job Description (JD) Text:</label>
+            <textarea
+              id="jobDescription"
+              rows="10"
+              placeholder="Paste the complete Job Description text here."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="resumeText">Your Resume / CV Text:</label>
+            <textarea
+              id="resumeText"
+              rows="15"
+              placeholder="Paste the complete text from your Resume/CV here. Use plain text only."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="analyze-btn">
+            Analyze CV Match
+          </button>
+        </form>
+      </section>
+
+      <hr />
+
+      <div id="loadingIndicator" class="loading" style="display: none">
+        Analyzing... Gemini AI is comparing your CV and JD. Please wait.        
+      </div>
+
+      <section
+        id="analysisResults"
+        class="results-container"
+        style="display: none"
+      >
+        <h2>Analysis Results:</h2>
+        <div id="scoreArea" class="score-area">
+          <h3>Match Score & ATS Compliance:</h3>
+          <p id="matchScore">Matching Score: --</p>
+          <p id="atsScore">ATS Compliance Score: --</p>
+        </div>
+        <div id="suggestionsArea" class="suggestions-area">
+          <h3>Improvement Suggestions:</h3>
+          <pre id="suggestionsText">Loading suggestions...</pre>
+        </div>
+      </section>
+      <hr />
+      <section class="analysis-history-section">
+        <h2>Analysis History</h2>
+        <ul id="analysisHistoryList" class="list-group">
+          <li class="list-group-item">Loading analysis history...</li>
+        </ul>
+      </section>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/resume.js"></script>
+  </body>
+</html>
