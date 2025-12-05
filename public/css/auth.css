@@ -261,12 +261,13 @@ header p {
 
 /* ===== MESSAGE & ALERTS ===== */
 .message {
-  padding: 20px 24px;
+  padding: 10px 10px;
   border-radius: var(--border-radius);
   margin-bottom: 25px;
+  margin-top: 5px;
   font-weight: 500;
   box-shadow: var(--box-shadow);
-  border-left: 4px solid;
+  border-left: 2px solid;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   text-align: center;
