@@ -34,13 +34,13 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/auth", authRoutes);
 app.use("/api/resume", resumeRoutes);
 
-// app.get('/', (req, res) => {
-//     // Vercel aur clients ko batata hai ki server chal raha hai aur response theek hai
-//     res.status(200).json({ 
-//         message: 'Server is running successfully!',
-//         status: 'ok'
-//     });
-// });
+app.get('/', (req, res) => {
+   
+    res.status(200).json({ 
+        message: 'Server is running successfully!',
+        status: 'ok'
+    });
+});
 
 
 app.listen(PORT, () => {
