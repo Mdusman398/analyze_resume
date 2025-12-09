@@ -34,18 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/api/auth", authRoutes);
 app.use("/api/resume", resumeRoutes);
 
-app.get('/', (req, res) => {
-   
-    res.status(200).json({ 
-        message: 'Server is running successfully!',
-        status: 'ok'
-    });
-});
-
-
 app.listen(PORT, () => {
-  console.log(
-    ` Server running on port ${PORT}`
-  );
+  console.log(` Server running on port ${PORT}`);
   console.log(`Frontend URL configured: ${FRONTEND_URL}`);
 });
