@@ -16,7 +16,6 @@ router.route("/analyze").post(protect, uploadAndExtract, analyzeResume);
 
 router.route("/history").get(protect, getAnalysisHistory);
 
-// CRUD Routes for Individual History Entry
 router
   .route("/history/:id")
   .get(protect, getSingleAnalysis)
